@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="274.0" prefWidth="431.0" spacing="20.0" styleClass="root" stylesheets="@../../../css/home.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenteapp.HelloController">
+<VBox alignment="CENTER" prefHeight="274.0" prefWidth="431.0" spacing="20.0" styleClass="root" stylesheets="@../../../css/header.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenteapp.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -15,5 +15,5 @@
             <Image url="@../../../images/saboreame_sin_background.png" />
         </image>
     </ImageView>
-    <Button onAction="#sartuBotoia" prefHeight="26.0" prefWidth="96.0"  styleClass="button-rounded" text="Sartu" textAlignment="CENTER" />
+    <Button onAction="#sartuBotoia" prefHeight="26.0" prefWidth="96.0"  styleClass="button-rounded" text="Sartu" textAlignment="CENTER" textFill="WHITE" />
 </VBox>
