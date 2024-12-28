@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../css/header.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenteapp.LangileaController">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="tableBackColor" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenteapp.LangileaController">
+    <children>
+        <HBox prefHeight="74.0" prefWidth="1063.0" styleClass="navBar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <ButtonBar prefHeight="40.0" prefWidth="450.0">
+                    <buttons>
+                        <Button mnemonicParsing="false" styleClass="navbarBtn" text="Langileak" />
+                        <Button mnemonicParsing="false" prefHeight="33.0" styleClass="navbarBtn" text="Produktuak" />
+                        <Button mnemonicParsing="false" styleClass="navbarBtn" text="Menua" />
+                    </buttons>
+                </ButtonBar>
+            </children>
+        </HBox>
+        <TableView fx:id="langileakTable" layoutX="42.4" layoutY="92.0" maxHeight="300.0" maxWidth="516.0" prefHeight="300.0" prefWidth="516.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="42.0">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50.0" minWidth="50.0" maxWidth="50.0" />
+                <TableColumn fx:id="izenaColumn" text="Izena" prefWidth="100.0" minWidth="75.0" maxWidth="150.0" />
+                <TableColumn fx:id="abizenaColumn" text="Abizena" prefWidth="100.0" minWidth="75.0" maxWidth="150.0" />
+                <TableColumn fx:id="emailColumn" text="Emaila" prefWidth="200.0" minWidth="150.0" maxWidth="250.0" />
+                <TableColumn fx:id="nivelPermisosColumn" text="Nivel Permisos" prefWidth="100.0" minWidth="75.0" maxWidth="100.0" />
+            </columns>
+        </TableView>
+    </children>
+    <stylesheets>
+        <URL value="@../../../css/navbar.css" />
+        <URL value="@../../../css/header.css" />
+    </stylesheets>
 </AnchorPane>

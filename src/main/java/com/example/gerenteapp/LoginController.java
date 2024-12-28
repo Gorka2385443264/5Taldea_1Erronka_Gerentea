@@ -23,8 +23,10 @@ public class LoginController extends BaseController {
 
     @FXML
     protected void loginBotoia() throws IOException {
-        String email = emai.getText();
-        String pasahitza = pasa.getText();
+        //String email = emai.getText();
+        //String pasahitza = pasa.getText();
+        String email = "A@A";
+        String pasahitza = "123";
 
 
         if (erabiltzaileaKomprobatu(email, pasahitza)) {

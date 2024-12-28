@@ -2,7 +2,7 @@
 .root {
     -fx-background-color: #091725;
 }
-.button {
+.buttonCss {
     -fx-background-radius: 33;
     -fx-background-color: BA450D;
     -fx-color: White;
@@ -13,4 +13,7 @@
     -fx-background-color: White;
     -fx-color: black;
 
+}
+.tableBackColor{
+    -fx-background-color: White;
 }
