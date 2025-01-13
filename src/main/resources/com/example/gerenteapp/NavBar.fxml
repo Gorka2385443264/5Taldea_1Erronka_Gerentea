@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenteapp.NavBarController">
+    <ButtonBar layoutY="7.0" prefHeight="40.0" prefWidth="450.0" >
+        <buttons>
+            <Button mnemonicParsing="false" onAction="#goToLangileak" styleClass="navbarBtn" text="Langileak" />
+            <Button mnemonicParsing="false" onAction="#goToAlmazena" prefHeight="28.0" styleClass="navbarBtn" text="Almazena" />
+            <Button mnemonicParsing="false" onAction="#goToMenua" styleClass="navbarBtn" text="Menua" />
+
+        </buttons>
+    </ButtonBar>
+</AnchorPane>

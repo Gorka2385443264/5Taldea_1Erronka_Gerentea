@@ -12,4 +12,8 @@ public class BaseController {
     public void setUsingStage(Stage usingStage) {
         this.usingStage = usingStage;
     }
+
+    public void setStage(Stage stage) {
+        this.usingStage = stage;
+    }
 }

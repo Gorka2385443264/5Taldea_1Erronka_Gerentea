@@ -25,7 +25,7 @@ public class LoginController extends BaseController {
     protected void loginBotoia() throws IOException {
         //String email = emai.getText();
         //String pasahitza = pasa.getText();
-        String email = "A@A";
+        String email = "asier@gmail.com";
         String pasahitza = "123";
 
 
