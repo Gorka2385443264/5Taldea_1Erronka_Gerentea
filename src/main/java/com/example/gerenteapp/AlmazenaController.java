@@ -2,7 +2,6 @@ package com.example.gerenteapp;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -30,7 +29,7 @@ public class AlmazenaController {
     private TableColumn<Almazena, String> motaColumn;
 
     @FXML
-    private TableColumn<Almazena, String> ezaugarriaColumn;
+    private TableColumn<Almazena, String> ezaugarriakColumn;
 
     @FXML
     private TableColumn<Almazena, Integer> stockColumn;
@@ -62,7 +61,7 @@ public class AlmazenaController {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         izenaColumn.setCellValueFactory(new PropertyValueFactory<>("izena"));
         motaColumn.setCellValueFactory(new PropertyValueFactory<>("mota"));
-        ezaugarriaColumn.setCellValueFactory(new PropertyValueFactory<>("ezaugarria"));
+        ezaugarriakColumn.setCellValueFactory(new PropertyValueFactory<>("ezaugarria"));
         stockColumn.setCellValueFactory(new PropertyValueFactory<>("stock"));
         unitateaColumn.setCellValueFactory(new PropertyValueFactory<>("unitatea"));
         minColumn.setCellValueFactory(new PropertyValueFactory<>("min"));

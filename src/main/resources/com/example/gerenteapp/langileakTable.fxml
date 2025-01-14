@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="578.0" prefWidth="854.0" styleClass="tableBackColor" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenteapp.LangileaController">
+<AnchorPane prefHeight="768.0" prefWidth="1204.0" styleClass="tableBackColor" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenteapp.LangileaController">
     <children>
         <HBox prefHeight="74.0" prefWidth="1063.0" styleClass="navBar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
-                <fx:include source="NavBar.fxml" fx:id="navBar"/>
+                <fx:include fx:id="navBar" source="NavBar.fxml" />
             </children>
         </HBox>
-        <TableView fx:id="langileakTable" layoutX="43.0" layoutY="139.0" maxHeight="300.0" maxWidth="773.0" prefHeight="300.0" AnchorPane.leftAnchor="43.0">
+        <TableView fx:id="langileakTable" layoutX="43.0" layoutY="139.0" maxHeight="300.0" maxWidth="773.0" prefHeight="300.0" prefWidth="750.0" AnchorPane.leftAnchor="43.0">
             <columns>
                 <TableColumn fx:id="idColumn" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="ID" />
                 <TableColumn fx:id="izenaColumn" maxWidth="150.0" minWidth="75.0" prefWidth="100.0" text="Izena" />
@@ -27,6 +32,53 @@
             <Font size="20.0" />
          </font>
       </Label>
+      <Label layoutX="127.0" layoutY="477.0" prefHeight="56.0" prefWidth="161.0" text="Gehitu langilea">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+
+        <TextField fx:id="izenaField" layoutX="127.0" layoutY="547.0" promptText="Izena" />
+
+        <TextField fx:id="abizenaField" layoutX="298.0" layoutY="548.0" promptText="Abizena" />
+
+        <TextField fx:id="emailaField" layoutX="127.0" layoutY="583.0" promptText="Emaila" />
+
+        <TextField fx:id="pasahitzaField" layoutX="298.0" layoutY="583.0" promptText="Pasahitza" />
+
+        <TextField fx:id="nivelPermisosField" layoutX="127.0" layoutY="623.0" promptText="Nivel permisos" />
+      <Button layoutX="297.0" layoutY="622.0" mnemonicParsing="false" onAction="#createLangilea" prefHeight="26.0" prefWidth="150.0" styleClass="buttonCss" text="Sortu" />
+
+
+
+<!-- EZABATU-->
+      <Label layoutX="892.0" layoutY="126.0" prefHeight="56.0" prefWidth="189.0" text="Ezabatu langilea">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <TextField fx:id="izenaDeleteField" editable="false" layoutX="969.0" layoutY="195.0" prefHeight="26.0" prefWidth="131.0" promptText="Izena" />
+      <TextField fx:id="IdDeleteField" editable="false" layoutX="892.0" layoutY="195.0" prefHeight="26.0" prefWidth="63.0" promptText="ID" />
+      <Button layoutX="892.0" layoutY="240.0" mnemonicParsing="false" onAction="#deleteLangilea" prefHeight="34.0" prefWidth="207.0" styleClass="buttonCss" text="Ezabatu" />
+
+
+
+<!-- ERALDATU-->
+        <Label layoutX="586.0" layoutY="479.0" prefHeight="56.0" prefWidth="182.0" text="Eraldatu langilea">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <TextField fx:id="izenaEditField" layoutX="586.0" layoutY="549.0" promptText="Izena" />
+      <TextField fx:id="abizenaEditField" layoutX="757.0" layoutY="550.0" promptText="Abizena" />
+      <TextField fx:id="emailaEditField" layoutX="586.0" layoutY="585.0" promptText="Emaila" />
+      <TextField fx:id="pasahitzaEditField" layoutX="757.0" layoutY="585.0" promptText="Pasahitza" />
+      <TextField fx:id="nivelPermisosEditField" layoutX="586.0" layoutY="625.0" promptText="Nivel permisos" />
+      <Button layoutX="756.0" layoutY="624.0" mnemonicParsing="false" onAction="#editLangilea" prefHeight="26.0" prefWidth="150.0" styleClass="buttonCss" text="Eraldatu" />
+
+
+
+
     </children>
     <stylesheets>
         <URL value="@../../../css/navbar.css" />
