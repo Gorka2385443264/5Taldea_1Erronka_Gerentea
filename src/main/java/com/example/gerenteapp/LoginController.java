@@ -40,6 +40,7 @@ public class LoginController extends BaseController {
 
                 LangileaController langileaController = langileaLoader.getController();  // Asegúrate de que este controlador es el correcto
                 langileaController.setStage(this.getUsingStage());
+                langileaController.navBarKargatu();
                 this.getUsingStage().setTitle("Langilea Table");
                 this.getUsingStage().setScene(langileaScene);
                 this.getUsingStage().show();

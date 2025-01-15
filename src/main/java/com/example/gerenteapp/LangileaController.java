@@ -4,11 +4,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -40,14 +42,13 @@ public class LangileaController extends BaseController {
 
     private ObservableList<Langilea> langileakData = FXCollections.observableArrayList();
 
-    public void setStage(Stage stage) {
-        this.usingStage = stage;
-    }
-
     @FXML
     private AnchorPane navBar;
 
     private NavBarController navBarController;  // Esta es la referencia al controlador de NavBar.fxml
+
+    @FXML
+    private HBox navBarContainer;
 
     @FXML
     public void initialize() throws IOException {
@@ -57,15 +58,6 @@ public class LangileaController extends BaseController {
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
         pasahitzaColumn.setCellValueFactory(new PropertyValueFactory<>("pasahitza"));
         nivelPermisosColumn.setCellValueFactory(new PropertyValueFactory<>("nivelPermisos"));
-
-        navBarController = (NavBarController) navBar.getProperties().get("controller");
-
-        if (navBarController != null) {
-            System.out.println("Controlador de NavBar cargado correctamente.");
-            navBarController.setStage(usingStage);
-
-
-        }
 
         loadLangileakData();
         // Configurar columnas (asegúrate de que estos métodos coincidan con los atributos de tu clase Langilea)
