@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1204.0" style="-fx-background-color: #F8F8F8;" styleClass="tableBackColor" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenteapp.TxataController">
+    <children>
+        <HBox fx:id="navBarContainer" prefHeight="74.0" prefWidth="1063.0" styleClass="navBar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+    </children>
+    <stylesheets>
+        <URL value="@../../../css/navbar.css" />
+        <URL value="@../../../css/header.css" />
+    </stylesheets>
+</AnchorPane>
