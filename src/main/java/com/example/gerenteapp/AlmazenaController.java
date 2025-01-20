@@ -57,7 +57,6 @@ public class AlmazenaController extends BaseController {
 
         private ObservableList<Almazena> almazenaData = FXCollections.observableArrayList();
 
-        private NavBarController navBarController;
 
         @FXML
         private TextField IDField;

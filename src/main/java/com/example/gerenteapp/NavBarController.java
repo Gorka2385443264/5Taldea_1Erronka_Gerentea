@@ -10,20 +10,23 @@ import java.io.IOException;
 
 public class NavBarController extends BaseController {
 
+        public Langilea getLangilea() {
+                return langilea;
+        }
+
+        public void setLangilea(Langilea langilea) {
+                this.langilea = langilea;
+        }
+
+        private Langilea langilea;
+
         public NavBarController() {
                 super();
         }
 
-        /**
-         * Carga una nueva escena y actualiza el Stage principal.
-         *
-         * @param fxmlFile Archivo FXML a cargar (debe incluir la extensión .fxml).
-         * @param title    Título de la nueva ventana.
-         */
+
         private void loadScene(String fxmlFile, String title) {
                 try {
-                        // Verificar que el Stage esté inicializado
-
                         //TODO NULL DATOR STAGE-ea
                         Stage stage = this.getUsingStage();
                         if (stage == null) {
@@ -43,7 +46,7 @@ public class NavBarController extends BaseController {
                         Object controller = loader.getController();
                         if (controller instanceof BaseController) {
                                 ((BaseController) controller).setStage(stage);
-                                ((BaseController) controller).navBarKargatu();
+                                ((BaseController) controller).navBarKargatu(this.langilea);
                         }
 
                         // Actualizar la escena y el título del Stage

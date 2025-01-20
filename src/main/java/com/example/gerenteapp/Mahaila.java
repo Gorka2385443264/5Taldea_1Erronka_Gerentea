@@ -4,12 +4,14 @@ public class Mahaila {
         private int id;
         private int mahaila_zenbakia;
         private int eserlekuak;
+        private boolean habilitado;
 
 
-        public Mahaila(int id, int mahaila_zenbakia, int eserlekuak) {
+        public Mahaila(int id, int mahaila_zenbakia, int eserlekuak, boolean habilitado) {
                 this.id = id;
                 this.mahaila_zenbakia = mahaila_zenbakia;
                 this.eserlekuak = eserlekuak;
+                this.habilitado = habilitado;
         }
 
 
@@ -37,12 +39,21 @@ public class Mahaila {
                 this.eserlekuak = eserlekuak;
         }
 
+        public boolean isHabilitado() {
+                return habilitado;
+        }
+
+        public void setHabilitado(boolean habilitado) {
+                this.habilitado = habilitado;
+        }
+
         @Override
         public String toString() {
                 return "Mahaila{" +
                         "id=" + id +
                         ", mahaila_zenbakia=" + mahaila_zenbakia +
                         ", eserlekuak=" + eserlekuak +
+                        ", habilitado=" + habilitado +
                         '}';
         }
 }

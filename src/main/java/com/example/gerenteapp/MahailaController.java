@@ -28,6 +28,9 @@ public class MahailaController extends BaseController {
         @FXML
         private TableColumn<Mahaila, Integer> eserlekuakColumn;
 
+        @FXML
+        private TableColumn<Mahaila, Boolean> habilitadoColumn;
+
         private ObservableList<Mahaila> mahailakData = FXCollections.observableArrayList();
 
         @FXML
@@ -36,6 +39,7 @@ public class MahailaController extends BaseController {
                 idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
                 mahailaZenbakiaColumn.setCellValueFactory(new PropertyValueFactory<>("mahaila_zenbakia"));
                 eserlekuakColumn.setCellValueFactory(new PropertyValueFactory<>("eserlekuak"));
+                habilitadoColumn.setCellValueFactory(new PropertyValueFactory<>("habilitado"));
 
                 // Cargar los datos desde la base de datos
                 loadMahailakData();
@@ -56,7 +60,8 @@ public class MahailaController extends BaseController {
                                 Mahaila mahaila = new Mahaila(
                                         resultSet.getInt("id"),
                                         resultSet.getInt("mahaila_zenbakia"),
-                                        resultSet.getInt("eserlekuak")
+                                        resultSet.getInt("eserlekuak"),
+                                        resultSet.getBoolean("habilitado")
                                 );
                                 mahailakData.add(mahaila);
                         }

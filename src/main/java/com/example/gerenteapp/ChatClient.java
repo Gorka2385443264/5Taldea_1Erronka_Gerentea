@@ -1,4 +1,4 @@
-package com.example.txata;
+package com.example.gerenteapp;
 
 import java.io.*;
 import java.net.Socket;
@@ -9,9 +9,12 @@ public class ChatClient {
     private PrintWriter writer;
     private TxataController txataController;
 
+
     public ChatClient(TxataController txataController) {
         this.txataController = txataController;
     }
+
+
 
     public void connect() {
         new Thread(() -> {
@@ -27,6 +30,7 @@ public class ChatClient {
     }
 
     public void sendMessage(String message) {
+
         writer.println(message);
     }
 
@@ -34,7 +38,7 @@ public class ChatClient {
         try {
             String message;
             while ((message = reader.readLine()) != null) {
-                txataController.displayMessage("Servidor: " + message, false);
+                txataController.displayMessage(message, false);
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -30,14 +30,16 @@ public class BaseController {
     }
 
 
-    public void navBarKargatu(){
+    public void navBarKargatu(Langilea langilea){
 
         try {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("NavBar.fxml"));
             AnchorPane navBar = loader.load();
+
             navBarController = loader.getController();
             navBarContainer.getChildren().add(navBar);
+            navBarController.setLangilea(langilea);
 
         } catch (IOException e) {
             e.printStackTrace();
