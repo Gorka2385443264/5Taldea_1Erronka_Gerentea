@@ -62,10 +62,25 @@ public class TxataController extends BaseController{
                         Text text = new Text(message);
                         text.setFill(Color.BLACK);
                         TextFlow textFlow = new TextFlow(text);
-                        textFlow.setStyle(isUserMessage ? "-fx-background-color: #ADD8E6;" : "-fx-background-color: #D3D3D3;");
                         textFlow.setMaxWidth(300);
                         textFlow.setMinHeight(50);
-                        chatBox.getChildren().add(textFlow);
+
+                        // Separar el nombre del remitente del mensaje
+                        String[] parts = message.split(">", 2);
+                        if (parts.length < 2) return;
+                        String senderName = parts[0].trim();
+                        String msg = parts[1].trim();
+
+                        // Determinar si el mensaje es del usuario actual
+                        boolean isUser = senderName.equals(this.Izena);
+
+                        // Ajustar el estilo del TextFlow
+                        textFlow.setStyle(isUser ? "-fx-background-color: #ADD8E6; -fx-alignment: center-right; -fx-padding: 5px;" : "-fx-background-color: #D3D3D3; -fx-alignment: center-left; -fx-padding: 5px;");
+
+                        // Ajustar la alineación del mensaje
+                        HBox messageBox = new HBox(textFlow);
+                        messageBox.setStyle(isUser ? "-fx-alignment: center-right;" : "-fx-alignment: center-left;");
+                        chatBox.getChildren().add(messageBox);
                         scrollPane.setVvalue(1.0); // Scroll to the bottom
                 });
         }
