@@ -18,8 +18,8 @@ public class LoginController extends BaseController {
 
         @FXML
         protected void loginBotoia() throws IOException {
-                String email = "asier@gmail.com";
-                String pasahitza = "123";
+                String email = emai.getText();
+                String pasahitza = pasa.getText();
                 Langilea langileaLogin = LoginKudeatzailea.erabiltzaileaKomprobatu(email, pasahitza);
 
                 if (langileaLogin != null) {

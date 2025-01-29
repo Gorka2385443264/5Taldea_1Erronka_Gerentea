@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -46,7 +47,7 @@ public class MahaiaController extends BaseController {
         private TextField eserlekuKantField1;
 
         @FXML
-        private TextField GaitutaField1;
+        private ComboBox gaitutaComboBox;
 
         private ObservableList<Mahaia> mahailakData = FXCollections.observableArrayList();
 
@@ -111,8 +112,8 @@ public class MahaiaController extends BaseController {
                 IDField1.setText(String.valueOf(selectedMahaia.getId()));
                 mahaiZenbField1.setText(String.valueOf(selectedMahaia.getMahaila_zenbakia()));
                 eserlekuKantField1.setText(String.valueOf(selectedMahaia.getEserlekuak()));
-                GaitutaField1.setText(String.valueOf(selectedMahaia.isHabilitado()));
-                GaitutaField1.setText(String.valueOf(selectedMahaia.isHabilitado()));
+                gaitutaComboBox.getSelectionModel().select(selectedMahaia.isHabilitado());
+
         }
 
         public void mahaiaEraldatu(ActionEvent actionEvent) {
@@ -129,7 +130,7 @@ public class MahaiaController extends BaseController {
                         int newMahailaZenbakia = Integer.parseInt(mahaiZenbField1.getText());
                         int newEserlekuak = Integer.parseInt(eserlekuKantField1.getText());
 
-                        int newHabilitado = Integer.parseInt(GaitutaField1.getText());
+                        int newHabilitado = Integer.parseInt((String) gaitutaComboBox.getValue());
 
                         String update_at = null;
 
@@ -165,7 +166,7 @@ public class MahaiaController extends BaseController {
                 IDField1.clear();
                 mahaiZenbField1.clear();
                 eserlekuKantField1.clear();
-                GaitutaField1.clear();
+                gaitutaComboBox.getSelectionModel().selectFirst();
         }
 
 }

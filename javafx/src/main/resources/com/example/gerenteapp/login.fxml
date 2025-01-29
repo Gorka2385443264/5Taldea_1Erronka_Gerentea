@@ -10,12 +10,12 @@
 
 <VBox alignment="CENTER" prefHeight="523.0" prefWidth="828.0" spacing="20.0" stylesheets="@../../../css/header.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenteapp.LoginController">
 
-        <ImageView fitHeight="191.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="201.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../images/saboreame_sin_background.png" />
             </image>
         </ImageView>
-        <TextField fx:id="emai" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Emaila" styleClass="input">
+        <TextField fx:id="emai" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Email" styleClass="input">
             <font>
                 <Font size="13.0" />
             </font>
@@ -25,7 +25,7 @@
                 <Font size="13.0" />
             </font>
         </TextField>
-        <Button alignment="CENTER" contentDisplay="CENTER" onAction="#loginBotoia" prefHeight="34.0" prefWidth="200.0" text="Saioa hasi" textFill="WHITE">
+        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" onAction="#loginBotoia" prefHeight="28.0" prefWidth="200.0" text="Saioa hasi" textFill="WHITE">
             <font>
                 <Font size="17.0" />
             </font>

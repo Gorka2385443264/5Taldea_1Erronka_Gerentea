@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 public class DBKonexioa {
     // Datu basearen informazioa sartu
-    //private static final String Db_izena = "jdbc:mysql://192.168.1.1:3306/5_erronka1";
-    //private static final String Db_erabiltzailea = "root";
+    //private static final String Db_izena = "jdbc:mysql://192.168.115.155:3306/5_erronka1";
+    //private static final String Db_erabiltzailea = "admin";
     //private static final String Db_pasahitza = "5_erronka1";
 
     // Datu base locala

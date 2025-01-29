@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="768.0" prefWidth="1204.0" style="-fx-background-color: #F8F8F8;" styleClass="tableBackColor" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gerenteapp.MahaiaController">
@@ -30,8 +33,8 @@
                 <Font size="20.0" />
             </font>
         </Label>
-      <Ellipse fill="#091725" layoutX="922.0" layoutY="401.0" radiusX="217.0" radiusY="139.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label blendMode="SRC_ATOP" layoutX="766.0" layoutY="299.0" prefHeight="56.0" prefWidth="182.0" text="Mahaia Eraldatu" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#091725" height="226.0" layoutX="740.0" layoutY="299.0" stroke="BLACK" strokeType="INSIDE" width="383.0" />
+      <Label blendMode="SRC_ATOP" layoutX="776.0" layoutY="309.0" prefHeight="56.0" prefWidth="182.0" text="Mahaia Eraldatu" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
@@ -39,51 +42,55 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Label>
-      <TextField fx:id="IDField1" blendMode="SRC_ATOP" editable="false" layoutX="766.0" layoutY="369.0" promptText="ID">
+      <TextField fx:id="IDField1" blendMode="SRC_ATOP" editable="false" layoutX="776.0" layoutY="379.0" promptText="ID">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </TextField>
-      <TextField fx:id="mahaiZenbField1" blendMode="SRC_ATOP" editable="false" layoutX="933.0" layoutY="370.0" promptText="Mahai zenbakia">
+      <TextField fx:id="mahaiZenbField1" blendMode="SRC_ATOP" editable="false" layoutX="943.0" layoutY="380.0" promptText="Mahai zenbakia">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </TextField>
-      <TextField fx:id="eserlekuKantField1" blendMode="SRC_ATOP" layoutX="766.0" layoutY="416.0" promptText="Eserleku kantitatea">
+      <TextField fx:id="eserlekuKantField1" blendMode="SRC_ATOP" layoutX="776.0" layoutY="426.0" promptText="Eserleku kantitatea">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </TextField>
-      <TextField fx:id="GaitutaField1" blendMode="SRC_ATOP" layoutX="934.0" layoutY="414.0" promptText="Gaituta">
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </TextField>
-      <Button blendMode="SRC_ATOP" layoutX="767.0" layoutY="457.0" mnemonicParsing="false" onAction="#mahaiaEraldatu" prefHeight="36.0" prefWidth="319.0" styleClass="buttonCss" text="Sortu">
+      <ComboBox fx:id="gaitutaComboBox" editable="false" layoutX="942.0" layoutY="426.0" prefWidth="150.0" promptText="Gaituta" value="0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="0" />
+               <String fx:value="1" />
+            </FXCollections>
+         </items>
+      </ComboBox>
+      <Button blendMode="SRC_ATOP" layoutX="777.0" layoutY="467.0" mnemonicParsing="false" onAction="#mahaiaEraldatu" prefHeight="36.0" prefWidth="319.0" styleClass="buttonCss" text="Sortu">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Button>
-      <Label layoutX="771.0" layoutY="342.0" prefHeight="34.0" prefWidth="103.0" text="ID" textFill="WHITE">
+      <Label layoutX="781.0" layoutY="352.0" prefHeight="34.0" prefWidth="103.0" text="ID" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="938.0" layoutY="342.0" prefHeight="34.0" prefWidth="121.0" text="Mahai zenbakia" textFill="WHITE">
+      <Label layoutX="948.0" layoutY="352.0" prefHeight="34.0" prefWidth="121.0" text="Mahai zenbakia" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="771.0" layoutY="389.0" prefHeight="34.0" prefWidth="137.0" text="Eserleku kantitatea" textFill="WHITE">
+      <Label layoutX="781.0" layoutY="399.0" prefHeight="34.0" prefWidth="137.0" text="Eserleku kantitatea" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="939.0" layoutY="388.0" prefHeight="34.0" prefWidth="121.0" text="Gaituta" textFill="WHITE">
+      <Label layoutX="949.0" layoutY="398.0" prefHeight="34.0" prefWidth="121.0" text="Gaituta" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
+
     </children>
     <stylesheets>
         <URL value="@../../../css/navbar.css" />

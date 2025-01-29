@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -45,12 +46,8 @@ public class LangileaController extends BaseController {
         private ObservableList<Langilea> langileakData = FXCollections.observableArrayList();
 
         @FXML
-        private AnchorPane navBar;
+        private TextField deleted_atEditField;
 
-        private NavBarController navBarController;  // Esta es la referencia al controlador de NavBar.fxml
-
-        @FXML
-        private HBox navBarContainer;
 
         @FXML
         public void initialize() throws IOException {
@@ -79,7 +76,8 @@ public class LangileaController extends BaseController {
                                 abizenaEditField.setText(newSelection.getAbizena());
                                 emailaEditField.setText(newSelection.getEmail());
                                 pasahitzaEditField.setText(newSelection.getPasahitza());
-                                nivelPermisosEditField.setText(String.valueOf(newSelection.getNivelPermisos()));
+                                nivelPermisosComboBoxEdit.getSelectionModel().select(newSelection.getNivelPermisos());
+
                                 deleted_atEditField.setText(String.valueOf(newSelection.getDeleted_at()));
                         }
                 });
@@ -127,7 +125,7 @@ public class LangileaController extends BaseController {
         private TextField pasahitzaField;
 
         @FXML
-        private TextField nivelPermisosField;
+        private ComboBox nivelPermisosComboBox;
 
 
         public void createLangilea(ActionEvent actionEvent) {
@@ -139,7 +137,8 @@ public class LangileaController extends BaseController {
                 int nivelPermisos;
 
                 try {
-                        nivelPermisos = Integer.parseInt(nivelPermisosField.getText().trim());
+                        nivelPermisos = Integer.parseInt((String) nivelPermisosComboBox.getValue());
+
                 } catch (NumberFormatException e) {
                         System.out.println("El campo Nivel permisos debe ser un número.");
                         return;
@@ -171,7 +170,8 @@ public class LangileaController extends BaseController {
                 abizenaField.clear();
                 emailaField.clear();
                 pasahitzaField.clear();
-                nivelPermisosField.clear();
+                nivelPermisosComboBox.getSelectionModel().selectFirst();
+
         }
 
 
@@ -231,9 +231,7 @@ public class LangileaController extends BaseController {
         @FXML
         private TextField pasahitzaEditField;
         @FXML
-        private TextField nivelPermisosEditField;
-        @FXML
-        private TextField deleted_atEditField;
+        private ComboBox nivelPermisosComboBoxEdit;
 
 
         public void editLangilea(ActionEvent actionEvent) {
@@ -252,7 +250,7 @@ public class LangileaController extends BaseController {
                 int nivelPermisos;
 
                 try {
-                        nivelPermisos = nivelPermisosEditField.getText().trim().isEmpty() ? selectedLangilea.getNivelPermisos() : Integer.parseInt(nivelPermisosEditField.getText().trim());
+                        nivelPermisos = Integer.parseInt((String) nivelPermisosComboBoxEdit.getValue());
                 } catch (NumberFormatException e) {
                         System.out.println("El campo Nivel permisos debe ser un número.");
                         return;
@@ -271,7 +269,7 @@ public class LangileaController extends BaseController {
                         abizenaEditField.clear();
                         emailaEditField.clear();
                         pasahitzaEditField.clear();
-                        nivelPermisosEditField.clear();
+                        nivelPermisosComboBoxEdit.getSelectionModel().selectFirst();
 
                         // Recargar los datos de la tabla
                         loadLangileakData();

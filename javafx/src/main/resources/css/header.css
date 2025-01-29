@@ -17,3 +17,7 @@
 .tableBackColor{
     -fx-background-color: White;
 }
+.textFieldTxat{
+    -fx-border: 1px;
+    --border-color: 232, 158, 71;
+}
